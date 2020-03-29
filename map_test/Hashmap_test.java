@@ -2,6 +2,7 @@ package map_test;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
 
 public class Hashmap_test {
@@ -24,6 +25,19 @@ public class Hashmap_test {
         //增强for
         for(String key:mapK){
             System.out.println(key+"="+map.get(key));
+        }
+        System.out.println("----------------");
+        //Entry遍历  Entry就是Key-Value对
+        Set<Map.Entry<String, Integer>> entries = map.entrySet();
+        Iterator<Map.Entry<String, Integer>> it1 = entries.iterator();
+        while(it1.hasNext()){
+            Map.Entry<String, Integer> entry = it1.next();
+            System.out.println(entry.getKey()+"="+entry.getValue());
+        }
+        System.out.println("----------------");
+        //增强for
+        for(Map.Entry<String, Integer> en:entries){
+            System.out.println(en.getKey()+"="+en.getValue());
         }
     }
 }
